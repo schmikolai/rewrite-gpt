@@ -22,4 +22,4 @@ Select the desired text in the editor window and use the `Rewrite with GPT` comm
 
 ## Legal
 
-This extension will use the configured API key to make requests to a third party API according to their pricing model. The author of this extension assumes no liability to any costs incurred. 
+This extension will use the configured API key to make requests to a third-party API according to their pricing model. The author of this extension assumes no liability for any costs incurred.
