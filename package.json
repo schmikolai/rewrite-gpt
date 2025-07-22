@@ -24,9 +24,14 @@
     ],
     "keybindings": [
       {
-        "command": "rewrite-gpt.rewrite",
-        "key": "cmd+r",
-        "when": "editorTextFocus"
+      "command": "rewrite-gpt.rewrite",
+      "key": "cmd+r",
+      "when": "editorTextFocus"
+      },
+      {
+      "command": "rewrite-gpt.rewrite",
+      "key": "ctrl+r",
+      "when": "editorTextFocus"
       }
     ],
     "configuration": {
