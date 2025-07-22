@@ -1,9 +1,13 @@
 # Change Log
 
-All notable changes to the "rewrite-gpt" extension will be documented in this file.
+All notable changes to the "Rewrite GPT" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [1.0.0]
 
-## [Unreleased]
+### Added
 
-- Initial release
+- Highlighted text replacement mith hotkey
+- Rewrite prompt setting
+- Model setting
+- API key setting
+- API key setup helper command
