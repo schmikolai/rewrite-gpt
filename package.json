@@ -1,8 +1,8 @@
 {
   "name": "rewrite-gpt",
-  "displayName": "rewrite-gpt",
-  "description": "",
-  "version": "0.0.2",
+  "displayName": "Rewrite GPT",
+  "description": "A Visual Studio Code extension that rewrites selected text using the OpenAI API.",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.101.0"
   },
