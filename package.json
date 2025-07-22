@@ -1,0 +1,77 @@
+{
+  "name": "rewrite-gpt",
+  "displayName": "rewrite-gpt",
+  "description": "",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rewrite-gpt.rewrite",
+        "title": "Rewrite with GPT"
+      },
+      {
+        "command": "rewrite-gpt.configureApiKey",
+        "title": "Configure OpenAI API Key"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "rewrite-gpt.rewrite",
+        "key": "cmd+r",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Rewrite GPT",
+      "properties": {
+        "rewrite-gpt.rewritePrompt": {
+          "type": "string",
+          "default": "Rewrite this code to improve clarity and efficiency.",
+          "description": "The prompt sent to GPT when rewriting code."
+        },
+        "rewrite-gpt.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API Key for the Rewrite GPT extension.",
+          "scope": "application"
+        },
+        "rewrite-gpt.model": {
+          "type": "string",
+          "default": "gpt-4o-mini",
+          "description": "OpenAI model to use for rewriting text."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.101.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "openai": "^5.10.1"
+  }
+}
