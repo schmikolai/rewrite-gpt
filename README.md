@@ -2,6 +2,8 @@
 
 A Visual Studio Code extension that rewrites selected text using the OpenAI API.
 
+Designed to rapidly revise text using a pre-configured prompt with a single keystroke.
+
 ## Configuration
 
 ### Setup OpenAI API Key

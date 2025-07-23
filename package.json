@@ -50,7 +50,7 @@
       "properties": {
         "rewrite-gpt.rewritePrompt": {
           "type": "string",
-          "default": "Rewrite this code to improve clarity and efficiency.",
+          "default": "Revise this text for lexical and grammatical errors. Maintain the used syntax and line separation.",
           "description": "The prompt sent to GPT when rewriting code."
         },
         "rewrite-gpt.apiKey": {
