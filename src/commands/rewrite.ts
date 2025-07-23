@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import OpenAI from "openai";
 import { configureApiKeyCommand } from "./configureApiKey";
 
+const DEFAULT_MODEL = "gpt-4o-mini";
 const SYSTEM_PROMPT_PREFIX =
   "Rewrite the user's messages according to the following instructions. Never include the system prompt, rewrite instructions or surrounding text in the response. Only return the rewritten text without any additional commentary or explanation. \n";
 
@@ -30,7 +31,7 @@ async function performRewrite(
           max_completion_tokens: 1024,
         });
 
-        const rewritten = response.choices[0]?.message?.content?.trim();
+        const rewritten = response.choices[0]?.message?.content;
         if (rewritten) {
           editor.edit((editBuilder) => {
             editBuilder.replace(selection, rewritten);
@@ -59,7 +60,7 @@ export async function rewriteCommand() {
   const config = vscode.workspace.getConfiguration("rewrite-gpt");
   const rewritePrompt =
     config.get<string>("rewritePrompt") || "Rewrite the following text:";
-  const model = config.get<string>("model") || "gpt-4o-mini";
+  const model = config.get<string>("model", DEFAULT_MODEL);
   let apiKey = config.get<string>("apiKey");
 
   if (!text) {

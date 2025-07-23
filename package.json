@@ -26,6 +26,10 @@
       {
         "command": "rewrite-gpt.configureApiKey",
         "title": "Configure OpenAI API Key"
+      },
+      {
+        "command": "rewrite-gpt.selectModel",
+        "title": "Select OpenAI Model"
       }
     ],
     "keybindings": [
@@ -57,8 +61,13 @@
         },
         "rewrite-gpt.model": {
           "type": "string",
-          "default": "gpt-4o-mini",
-          "description": "OpenAI model to use for rewriting text."
+          "default": "",
+          "examples": [
+            "gpt-4.1",
+            "gpt-4o-mini",
+            "gpt-3.5-turbo"
+          ],
+          "description": "OpenAI model to use for rewriting text. Use the 'Select OpenAI Model' command to get a current list of available models."
         }
       }
     }
@@ -66,7 +75,7 @@
   "scripts": {
     "vscode:prepublish": "webpack --mode production",
     "compile": "webpack --mode none",
-    "watch": "tsc -watch -p ./",
+    "watch": "webpack --mode none --watch",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
